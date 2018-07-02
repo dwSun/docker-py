@@ -823,7 +823,7 @@ class ContainerApiMixin(object):
                 )
 
         url = self._url("/containers/{0}/logs", container)
-        res = self._get(url, params=params, stream=stream)
+        res = self._get(url, params=params, stream=stream, timeout=86400)
         output = self._get_result(container, stream, res)
 
         if stream:
